@@ -2,7 +2,7 @@ import React from 'react';
 import { movieList } from '~utils/constants'
 
 const TableHeader = () => (
-  <div>
+  <div className="table-header">
     <div><span>id</span></div>
     <div><span>Nombre</span></div>
     <div><span>F. publicación</span></div>
@@ -11,7 +11,7 @@ const TableHeader = () => (
 );
 
 const TableBody = ({ id, name, date, status }) => (
-  <div>
+  <div className="table-body">
     <div>{id}</div>
     <div>{name}</div>
     <div>{date}</div>

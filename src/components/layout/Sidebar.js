@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const sidebarOptions = [1, 2, 3, 4, 5, 6].map(option => {
   return (
-    <li>
+    <li key={option}>
       <Link to={'/'} key={option}>
         local
       </Link>

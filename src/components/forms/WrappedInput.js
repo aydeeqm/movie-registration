@@ -10,7 +10,7 @@ const WrappedInput = ({
   displayName,
   name,
   styles = {},
-  meta,
+  meta: { touched, error, warning },
   required,
 }) => {
   return (
@@ -38,15 +38,14 @@ const WrappedInput = ({
               name={name}
               {...input}
               {...widget}
-              className={
-                meta.touched && meta.error
-                  ? styles.inputError || `${styles.input ? styles.input : ''} inputError`
-                  : styles.input || 'input'
-              }
+              className={'input'}
             />
           </div>
         </div>
       </div>
+      {touched &&
+        ((error && <span className="error">{error}</span>) ||
+          (warning && <span>{warning}</span>))}
     </div>
   );
 };

@@ -7,7 +7,7 @@ const Layout = ({ children }) => (
     <Header />
     <div className='layout-wrapper'>
       <Sidebar />
-      <section>
+      <section className="layout-body">
         { children }
       </section>
     </div>

@@ -2,17 +2,18 @@ import { combineReducers, applyMiddleware, createStore, compose } from 'redux';
 import { createEpicMiddleware, combineEpics } from 'redux-observable';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { reducer as formReducer } from 'redux-form';
-import loginReducer, { epic as loginEpic } from '~redux/modules/login';
+
+import homeReducer from '~redux/modules/home';
 
 export const rootReducer = history =>
   combineReducers({
-    login: loginReducer,
     routing: connectRouter(history),
     router: connectRouter(history),
     form: formReducer,
+    movies: homeReducer,
   });
 
-const rootEpic = combineEpics(loginEpic);
+const rootEpic = combineEpics();
 
 const epicMiddleware = createEpicMiddleware();
 

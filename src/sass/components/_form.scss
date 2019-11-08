@@ -22,3 +22,33 @@
   margin-bottom: 20px;
 }
 
+.labelWrapper {
+  display: inline-flex;
+  padding-top: 0;
+  margin-bottom: 4px;
+
+  .label {
+    font-size: 1.2em;
+    letter-spacing: 0.4px;
+    line-height: 1;
+  }
+}
+
+.required-sign {
+  color: red;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-right: 12px;
+  margin-left: 8px;
+  span {
+    color: orange;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 3px;
+  }
+}
+
+.error {
+  color: red;
+}

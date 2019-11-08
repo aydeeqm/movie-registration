@@ -1,9 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form';
 import { nameProps, dateProps, statusProps } from '~utils/wrappedLabels';
-import { validate } from '~utils/validations';
 
-const RegisterForm = props => {
+let EditForm = props => {
   return (
     <form 
       autoComplete="off"
@@ -21,4 +21,19 @@ const RegisterForm = props => {
   );
 };
 
-export default reduxForm({ form: 'Register', validate })(RegisterForm);
+EditForm = reduxForm({
+  form: 'Edit-form',
+})(EditForm);
+
+EditForm = connect(
+  (state, ownProps) => {
+    const data = state.movies.info.length > 0 && state.movies.info.map(item => ({
+      ...item,
+      date: new Date(item.date),
+      status: item.status ? 1 : 0,
+    }))
+    return ({ initialValues:  data[ownProps.id]})
+  },
+)(EditForm)
+
+export default EditForm;

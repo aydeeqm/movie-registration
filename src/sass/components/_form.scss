@@ -1,0 +1,24 @@
+/* .custom-date-picker {
+  
+} */
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  @extend .control;
+}
+
+.react-datepicker__input-container input {
+  @extend .input;
+}
+
+.select, .select > select {
+  width: 100%;
+}
+
+.register-fieldset > div {
+  margin-bottom: 20px;
+}
+

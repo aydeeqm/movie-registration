@@ -21,3 +21,14 @@ export const movieList = [
     status_label: 'activo'
   }
 ];
+
+export const statusLabels = [
+  {
+    label: 'Activo',
+    value: 1
+  },
+  {
+    label: 'Inactivo',
+    value: 2
+  }
+]

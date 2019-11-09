@@ -1,5 +1,42 @@
+.centered-flex {
+  align-items: center;
+  justify-content: space-between;
+}
+
 .table-header,
 .table-body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+}
+
+.table-header {
+  height: 45px;
+}
+
+.table-body {
+  border: 1px solid #eaedf2;
+  padding: 10px 15px;
+
+  & > div {
+    justify-self: center;;
+  }
+}
+
+.table__body-button {
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:first-child {
+      margin-right: 5px;
+    }
+  }
+}
+
+.sz-title {
+  align-self: center;
+  font-size: 1.2em;
+  font-weight: 600;
+  justify-self: center;
 }

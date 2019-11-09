@@ -1,6 +1,5 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import Login from '~views/Login';
 import Home from '~views/Home';
 import routes from '~src/routes';

@@ -1,27 +1,3 @@
-export const movieList = [
-  {
-    id: 1,
-    name: 'Inframundo',
-    date: '12/12/14',
-    status: true,
-    status_label: 'activo'
-  },
-  {
-    id: 2,
-    name: 'Inframundo',
-    date: '12/12/14',
-    status: false,
-    status_label: 'inactivo'
-  },
-  {
-    id: 3,
-    name: 'Inframundo',
-    date: '12/12/14',
-    status: true,
-    status_label: 'activo'
-  }
-];
-
 export const statusLabels = [
   {
     label: 'Activo',
@@ -32,3 +8,36 @@ export const statusLabels = [
     value: 2
   }
 ]
+
+export const sidebarLabels = [
+  {
+    id: 'dashboard',
+    label: 'Dashboard',
+    route: '/'
+  },
+  {
+    id: 'movies',
+    label: 'Películas',
+    route: '/'
+  },
+  {
+    id: 'shifts',
+    label: 'Turnos',
+    route: '/'
+  },
+  {
+    id: 'admins',
+    label: 'Administradores',
+    route: '/'
+  },
+  {
+    id: 'profile',
+    label: 'Perfil',
+    route: '/'
+  },
+  {
+    id: 'logout',
+    label: 'Cerrar Sesión',
+    route: '/'
+  }
+] 

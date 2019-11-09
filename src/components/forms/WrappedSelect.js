@@ -1,17 +1,14 @@
 import React from 'react';
 
-const renderItemOption = (option => <option key={option.value}>{option.label}</option>)
+const renderSelectOption = (option =>
+  <option 
+    key={option.value}
+    value={option.value}
+  >
+    {option.label}
+  </option>)
 
-const Select = ({ options }) => (
-  <div class="select">
-    <select>
-      <option>Select dropdown</option>
-      {options.map(renderItemOption)}
-    </select>
-  </div>
-)
-
-const WrappedSelect = ({ displayName, id, required, options, hasError }) => {
+const WrappedSelect = ({input, displayName, id, required, options, meta: { touched, error, warning } }) => {
   return (
     <div>
       {displayName && displayName !== '' && (
@@ -29,12 +26,18 @@ const WrappedSelect = ({ displayName, id, required, options, hasError }) => {
       <div className='field-body'>
         <div className='field'>
           <div className='control'>
-            <Select
-              options={options}
-            />
+          <div className="select">
+            <select {...input} onChange={value => input.onChange(value)}>
+              <option>Select</option>
+              {options.map(renderSelectOption)}
+            </select>
+          </div>
           </div>
         </div>
       </div>
+      {touched &&
+        ((error && <span className="error">{error}</span>) ||
+          (warning && <span>{warning}</span>))}
     </div>
   )
 }

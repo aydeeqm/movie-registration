@@ -1,14 +1,12 @@
 import React from 'react';
 
-const labelDefault = 'Guardar';
-
-export const Modal = ({ label=labelDefault, title='', children }) => (
-  <div className="modal is-active">
+export const Modal = ({ title='', children, isShow, onClose }) => (
+  <div className={`modal ${isShow ? 'is-active': ''}`}>
     <div className="modal-background"></div>
     <div className="modal-card">
       <header className="modal-card-head">
         <p className="modal-card-title">{title}</p>
-        <button className="delete" aria-label="close"></button>
+        <button className="delete" aria-label="close" onClick={onClose}></button>
       </header>
       <section className="modal-card-body">
         {children}
